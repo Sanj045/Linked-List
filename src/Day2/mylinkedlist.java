@@ -17,7 +17,6 @@ public class mylinkedlist {
             head = newNode;
             return;
         }
-        Node temp = head;
         while (temp.next != null) {
             temp = temp.next;
         }
