@@ -25,6 +25,26 @@ public class mylinkedlist {
         temp.next = newNode;
     }
 
+    public void add(int data, int index) {
+        Node newNode = new Node(data);
+        if (index == 0) { // test xem index co khac 0 khong
+            addFirst(data);// neu co dung addfirst
+            return;
+            // index = 1
+            // 1 -> 2 -> 3
+            // can add 4 vao 1 va 2
+        } else {
+            Node temp = head; // temp = 1
+            for (int i = 0; i <= index - 1; i++) {
+                temp = temp.next;// temp = 2
+            }
+            Node nextNode = temp.next;// nextNode = 2
+            temp.next = newNode;// temp.next = 4
+            newNode.next = nextNode;// newNode.next = 3
+            // 1 -> 4 -> 2 -> 3
+        }
+    }
+
     public static void main(String[] args) {
         mylinkedlist listlinked = new mylinkedlist();
         // listlinked.addFirst(1);
