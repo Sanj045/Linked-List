@@ -45,6 +45,37 @@ public class mylinkedlist {
         }
     }
 
+    // BTVN 2
+    public int length() {
+        Node temp = head;
+        int count = 0;
+        // 1 -> 2 -> 3 -> 4
+        if (head != null) {// temp = 1
+            count++;// count = 1
+        }
+        while (temp != null) {
+            temp = temp.next;// temp = 2 ==> temp = 3 ==> temp = 4
+            count++;// count = 2 ==> count = 3 ==> count = 4
+        }
+        System.out.println(count);
+        return count;
+    }
+
+    public void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+    }
+
+    // 1 -> 2 -> 3 -> 4
+    public void deletFirst() {
+        Node temp = head;
+        head = head.next;
+        temp = null;
+    }
+
     public static void main(String[] args) {
         mylinkedlist listlinked = new mylinkedlist();
         // listlinked.addFirst(1);
